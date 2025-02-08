@@ -56,13 +56,17 @@ const MovieDetails = ({ darkMode }: MovieDetailsProps) => {
   if (!movie) return <div>Loading...</div>
 
   return (
-    <div className={`relative container mx-auto px-4 py-8 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+    <div className={`relative container mx-auto px-4 py-8 ${
+      darkMode ? 'text-white' : 'text-gray-900'
+    }`}>
       <button
         onClick={handleBack}
         className={`fixed top-20 left-4 md:left-8 z-10 p-2 rounded-full 
-          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-[#d2b48c] hover:bg-[#c19a6b]'}
-          transform transition-all duration-300 ease-in-out hover:scale-110
-          opacity-0 ${isVisible ? 'opacity-100 translate-x-0' : '-translate-x-full'}`}
+          ${darkMode 
+            ? 'bg-gray-800 hover:bg-gray-700' 
+            : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+          }
+          transform transition-all duration-300 ease-in-out hover:scale-110`}
       >
         <ArrowLeft className="w-6 h-6" />
       </button>
@@ -86,25 +90,25 @@ const MovieDetails = ({ darkMode }: MovieDetailsProps) => {
           <h1 className="text-3xl font-bold mb-4">{movie.Title}</h1>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div className={`p-4 rounded-lg ${
-              darkMode ? 'bg-gray-800' : 'bg-[#d2b48c]'
+              darkMode ? 'bg-gray-800' : 'bg-emerald-50 border border-emerald-200'
             }`}>
               <p className="font-semibold">Year</p>
               <p>{movie.Year}</p>
             </div>
             <div className={`p-4 rounded-lg ${
-              darkMode ? 'bg-gray-800' : 'bg-[#d2b48c]'
+              darkMode ? 'bg-gray-800' : 'bg-emerald-50 border border-emerald-200'
             }`}>
               <p className="font-semibold">Rating</p>
               <p>{movie.imdbRating}/10</p>
             </div>
             <div className={`p-4 rounded-lg ${
-              darkMode ? 'bg-gray-800' : 'bg-[#d2b48c]'
+              darkMode ? 'bg-gray-800' : 'bg-emerald-50 border border-emerald-200'
             }`}>
               <p className="font-semibold">Runtime</p>
               <p>{movie.Runtime}</p>
             </div>
             <div className={`p-4 rounded-lg ${
-              darkMode ? 'bg-gray-800' : 'bg-[#d2b48c]'
+              darkMode ? 'bg-gray-800' : 'bg-emerald-50 border border-emerald-200'
             }`}>
               <p className="font-semibold">Language</p>
               <p>{movie.Language}</p>

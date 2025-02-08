@@ -56,16 +56,23 @@ const Hero = ({ darkMode }: HeroProps) => {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className={`text-4xl font-bold mb-8 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+        <h2 className={`text-4xl font-bold mb-8 ${
+          darkMode ? 'text-white' : 'text-gray-900'
+        }`}>
           Find Your Favorite Movies
         </h2>
         <div className="relative w-full max-w-2xl mx-auto">
           <div className={`sticky top-0 z-50 bg-transparent backdrop-blur-md bg-opacity-90 pt-4 pb-2 ${
             scrollPosition > 0 ? 'shadow-lg' : ''
           }`}>
-            <div className={`relative flex items-center ${isFocused ? 'ring-2 ring-offset-2' : ''} 
-              ${darkMode ? 'ring-purple-500' : 'ring-[#d2b48c]'} rounded-lg transition-all duration-200`}>
-              <Search className={`absolute left-4 w-5 h-5 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`} />
+            <div className={`relative flex items-center ${
+              isFocused ? 'ring-2 ring-offset-2' : ''
+            } ${
+              darkMode ? 'ring-purple-500' : 'ring-emerald-500'
+            } rounded-lg transition-all duration-200`}>
+              <Search className={`absolute left-4 w-5 h-5 ${
+                darkMode ? 'text-gray-400' : 'text-gray-500'
+              }`} />
               <input
                 type="text"
                 value={search}
@@ -76,9 +83,8 @@ const Hero = ({ darkMode }: HeroProps) => {
                 className={`w-full p-4 pl-12 rounded-lg ${
                   darkMode 
                     ? 'bg-gray-700 text-white placeholder-gray-400' 
-                    : 'bg-white text-gray-900 placeholder-gray-500'
-                } border ${darkMode ? 'border-gray-600' : 'border-[#d2b48c]'}
-                  focus:outline-none transition-all duration-200`}
+                    : 'bg-white text-gray-900 placeholder-gray-500 border-emerald-200'
+                } border focus:border-emerald-500 focus:outline-none transition-all duration-200`}
               />
             </div>
           </div>
@@ -90,12 +96,11 @@ const Hero = ({ darkMode }: HeroProps) => {
               className={`mt-2 rounded-lg shadow-xl overflow-y-auto max-h-[60vh]
                 ${darkMode ? 'bg-gray-800' : 'bg-white'} z-40
                 transition-all duration-200 ease-in-out transform
-                scrollbar-thin ${darkMode 
-                  ? 'scrollbar-thumb-gray-600 scrollbar-track-gray-800' 
-                  : 'scrollbar-thumb-[#d2b48c] scrollbar-track-[#f5f5dc]'}`}
-              style={{
-                scrollBehavior: 'smooth'
-              }}
+                scrollbar-thin ${
+                  darkMode 
+                    ? 'scrollbar-thumb-gray-600 scrollbar-track-gray-800' 
+                    : 'scrollbar-thumb-emerald-500 scrollbar-track-emerald-100'
+                }`}
             >
               {suggestions.map((movie, index) => (
                 <div
@@ -104,7 +109,8 @@ const Hero = ({ darkMode }: HeroProps) => {
                   className={`group p-4 cursor-pointer transition-all duration-200
                     ${darkMode 
                       ? 'hover:bg-gray-700' 
-                      : 'hover:bg-[#f5f5dc]'}
+                      : 'hover:bg-emerald-50'
+                    }
                     transform transition-all duration-300
                     ${scrollPosition > 0 ? 'translate-y-0' : ''}`}
                   style={{

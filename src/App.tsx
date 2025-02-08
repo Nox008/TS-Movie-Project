@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Router>
-      <div className={`min-h-screen flex flex-col ${darkMode ? 'bg-gray-900' : 'bg-[#f5f5dc]'}`}>
+      <div className={`min-h-screen flex flex-col ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <div className="flex-grow">
           <Routes>
